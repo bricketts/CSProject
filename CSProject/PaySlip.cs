@@ -29,7 +29,7 @@ namespace CSProject
 
             foreach (Staff staff in myStaff)
             {
-                path = staff.LastName.ToLower() + " " + staff.FirstName.ToLower() + ".txt";
+                path = "C:\\Users\\Public\\Documents\\" + staff.LastName.ToLower() + ", " + staff.FirstName.ToLower() + ".txt";
 
                 using (var writer = new StreamWriter(path))
                 {
@@ -60,7 +60,7 @@ namespace CSProject
             var fullTimeStaff = myStaff.Where(f => f.HoursWorked > 80);
             var partTimeStaff = myStaff.Where(p => p.HoursWorked < 80);            
                         
-            string path = "summary.txt";
+            string path = "C:\\Users\\Public\\Documents\\summary.txt";
 
             using (var writer = new StreamWriter(path))
             {
