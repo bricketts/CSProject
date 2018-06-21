@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CSProject
 {
@@ -33,7 +29,7 @@ namespace CSProject
 
             foreach (Staff staff in myStaff)
             {
-                path = staff.LastName + ".txt";
+                path = staff.LastName.ToLower() + " " + staff.FirstName.ToLower() + ".txt";
 
                 using (var writer = new StreamWriter(path))
                 {
@@ -61,8 +57,8 @@ namespace CSProject
         public void GenerateSummery(List<Staff> myStaff)
         {
 
-            var fullTimeStaff = myStaff.Where(s => s.HoursWorked > 80);
-            var partTimeStaff = myStaff.Where(p => p.HoursWorked < 80);
+            var fullTimeStaff = myStaff.Where(f => f.HoursWorked > 80);
+            var partTimeStaff = myStaff.Where(p => p.HoursWorked < 80);            
                         
             string path = "summary.txt";
 
@@ -74,8 +70,8 @@ namespace CSProject
                 foreach (var member in fullTimeStaff)
                 {
                     writer.WriteLine("Name: {1}, {0}. Hours Worked: {2}", member.FirstName,
-                                                                         member.LastName,
-                                                                         member.HoursWorked);
+                                                                          member.LastName,
+                                                                          member.HoursWorked);
                 }
 
                 writer.WriteLine("");
@@ -83,9 +79,11 @@ namespace CSProject
                 writer.WriteLine("");
 
                 foreach (var member in partTimeStaff)
-                    writer.WriteLine("Name: {1}, {0}. Hours Worked: {2}", member.FirstName, 
-                                                                         member.LastName, 
-                                                                         member.HoursWorked);
+                {
+                    writer.WriteLine("Name: {1}, {0}. Hours Worked: {2}", member.FirstName,
+                                                                          member.LastName,
+                                                                          member.HoursWorked);
+                }
 
                 writer.Close();
             }

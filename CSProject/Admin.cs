@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CSProject
+﻿namespace CSProject
 {
     public class Admin : Staff
     {
@@ -23,8 +17,10 @@ namespace CSProject
         {
             base.CalculatePay();
 
-            if (HoursWorked > 160)            
+            if (HoursWorked > 160)
+            {                
                 Overtime = overtimeRate * (HoursWorked - 160);
+            }                
 
             TotalPay += Overtime; 
             

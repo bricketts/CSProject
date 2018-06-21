@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CSProject
 {
@@ -13,7 +9,7 @@ namespace CSProject
         
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
-        public double BasicPay { get; private set; }
+        public double BasicPay { get; protected set; }
         public double TotalPay { get; protected set; }        
 
         public int HoursWorked
@@ -38,7 +34,16 @@ namespace CSProject
         public virtual void CalculatePay()
         {
             Console.WriteLine("Calculating Pay...");
-            BasicPay = hoursWorked * hourlyRate;
+
+            if (hoursWorked > 160)
+            {
+                BasicPay = 160 * hourlyRate;
+            }
+            else
+            {
+                BasicPay = hoursWorked * hourlyRate;
+            }
+
             TotalPay = BasicPay;
         }
 
@@ -50,6 +55,5 @@ namespace CSProject
                    "\nBasic Pay: " + BasicPay + 
                    "\nTotal Pay: " + TotalPay;
         }
-
     }
 }

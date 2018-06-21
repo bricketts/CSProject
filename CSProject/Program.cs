@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CSProject
 {
@@ -17,7 +14,7 @@ namespace CSProject
 
             while (year == 0)
             {
-                Console.WriteLine("\nPlease Enter the Year");
+                Console.WriteLine("Please Enter the Year");
                 try
                 {
                     year = Convert.ToInt32(Console.ReadLine());
