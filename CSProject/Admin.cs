@@ -8,8 +8,9 @@ namespace CSProject
 {
     public class Admin : Staff
     {
-        private const double overtimeRate = 15.5f;
+        
         private const double adminHourlyrate = 30f;
+        private const double overtimeRate = adminHourlyrate * 1.5f;
 
         public double Overtime { get; private set; }
 

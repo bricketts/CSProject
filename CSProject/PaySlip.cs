@@ -73,16 +73,17 @@ namespace CSProject
 
                 foreach (var member in fullTimeStaff)
                 {
-                    writer.WriteLine("Name: {0} {1}. Hours Worked: {2}", member.FirstName,
+                    writer.WriteLine("Name: {1}, {0}. Hours Worked: {2}", member.FirstName,
                                                                          member.LastName,
                                                                          member.HoursWorked);
                 }
 
+                writer.WriteLine("");
                 writer.WriteLine("Parttime Staff: ");
                 writer.WriteLine("");
 
                 foreach (var member in partTimeStaff)
-                    writer.WriteLine("Name: {0} {1}. Hours Worked: {2}", member.FirstName, 
+                    writer.WriteLine("Name: {1}, {0}. Hours Worked: {2}", member.FirstName, 
                                                                          member.LastName, 
                                                                          member.HoursWorked);
 
