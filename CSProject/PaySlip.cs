@@ -61,13 +61,24 @@ namespace CSProject
         public void GenerateSummery(List<Staff> myStaff)
         {
 
+            var fullTimeStaff = myStaff.Where(s => s.HoursWorked > 80);
             var partTimeStaff = myStaff.Where(p => p.HoursWorked < 80);
                         
             string path = "summary.txt";
 
             using (var writer = new StreamWriter(path))
             {
-                writer.WriteLine("Staff with less than 80 hours this month: ");
+                writer.WriteLine("Fulltime staff: ");
+                writer.WriteLine("");
+
+                foreach (var member in fullTimeStaff)
+                {
+                    writer.WriteLine("Name: {0} {1}. Hours Worked: {2}", member.FirstName,
+                                                                         member.LastName,
+                                                                         member.HoursWorked);
+                }
+
+                writer.WriteLine("Parttime Staff: ");
                 writer.WriteLine("");
 
                 foreach (var member in partTimeStaff)
