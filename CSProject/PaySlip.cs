@@ -33,13 +33,13 @@ namespace CSProject
 
             foreach (Staff staff in myStaff)
             {
-                path = staff.NameOfStaff + ".txt";
+                path = staff.LastName + ".txt";
 
                 using (var writer = new StreamWriter(path))
                 {
                     writer.WriteLine("PAYSLIP FOR {0} {1}", (MonthsOfYear)month, year);
                     writer.WriteLine("===================================");
-                    writer.WriteLine("Name of Staff: {0}", staff.NameOfStaff);
+                    writer.WriteLine("Name of Staff: {0} {1}", staff.FirstName, staff.LastName);
                     writer.WriteLine("Hours Worked: {0}", staff.HoursWorked);
                     writer.WriteLine("");
                     writer.WriteLine("Basic Pay: {0}", staff.BasicPay);
@@ -71,7 +71,9 @@ namespace CSProject
                 writer.WriteLine("");
 
                 foreach (var member in partTimeStaff)
-                    writer.WriteLine("Name: {0}. Hours Worked: {1}", member.NameOfStaff, member.HoursWorked);
+                    writer.WriteLine("Name: {0} {1}. Hours Worked: {2}", member.FirstName, 
+                                                                         member.LastName, 
+                                                                         member.HoursWorked);
 
                 writer.Close();
             }

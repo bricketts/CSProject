@@ -12,7 +12,7 @@ namespace CSProject
         public List<Staff> ReadFile()
         {
             List<Staff> myStaff = new List<Staff>();
-            string[] result = new string[2];
+            string[] result = new string[3];
             string path = "staff.txt";
             string[] seperator = {", "};
 
@@ -23,10 +23,10 @@ namespace CSProject
                     while (!reader.EndOfStream)
                     {
                         result = reader.ReadLine().Split(seperator, StringSplitOptions.RemoveEmptyEntries);
-                        if (result[1] == "Manager")
-                            myStaff.Add(new Manager(result[0]));
-                        else if (result[1] == "Admin")
-                            myStaff.Add(new Admin(result[0]));
+                        if (result[2] == "Manager")
+                            myStaff.Add(new Manager(result[0], result[1]));
+                        else if (result[2] == "Admin")
+                            myStaff.Add(new Admin(result[0], result[1]));
                     }
                     reader.Close();
                 }

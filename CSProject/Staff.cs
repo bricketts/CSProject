@@ -14,8 +14,7 @@ namespace CSProject
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
         public double BasicPay { get; private set; }
-        public double TotalPay { get; protected set; }
-        //public string NameOfStaff { get; private set; }
+        public double TotalPay { get; protected set; }        
 
         public int HoursWorked
         {

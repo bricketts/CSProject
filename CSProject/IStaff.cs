@@ -15,5 +15,9 @@ namespace CSProject
         double BasicPay { get; }
         double TotalPay { get; }
 
+        void CalculatePay();
+
+        string ToString();
+
     }
 }

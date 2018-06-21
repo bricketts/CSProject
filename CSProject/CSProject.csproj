@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Admin.cs" />
     <Compile Include="FileReader.cs" />
+    <Compile Include="IStaff.cs" />
     <Compile Include="Manager.cs" />
     <Compile Include="PaySlip.cs" />
     <Compile Include="Program.cs" />

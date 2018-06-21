@@ -53,7 +53,7 @@ namespace CSProject
             {
                 try
                 {
-                    Console.Write("Enter Hours worked for {0}: ", myStaff[i].NameOfStaff);
+                    Console.Write("Enter Hours worked for {0} {1}: ", myStaff[i].FirstName, myStaff[i].LastName);
                     myStaff[i].HoursWorked = Convert.ToInt32(Console.ReadLine());
                     myStaff[i].CalculatePay();
                     Console.WriteLine(myStaff[i].ToString());
